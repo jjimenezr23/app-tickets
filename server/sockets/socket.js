@@ -24,6 +24,12 @@ io.on('connection', (client) => {
 
     );
 
+    client.broadcast.emit('lastfour ', {
+
+        last4: ticketControl.getLast4()
+
+    });
+
     client.on('atenderTicket', (data, callback) => {
 
         if (!data.desk) {

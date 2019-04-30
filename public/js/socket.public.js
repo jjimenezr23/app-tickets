@@ -22,6 +22,14 @@ socket.on('estadoActual', function(data) {
 
 });
 
+
+socket.on('lastFour', function(data) {
+    var audio = new Audio('audio/new-ticket.mp3');
+    audio.play();
+    //socket.broadcast.emit(data.last4);
+    updateHTML(data.last4);
+});
+
 function updateHTML(last4) {
 
     for (var i = 0; i <= last4.length - 1; i++) {
